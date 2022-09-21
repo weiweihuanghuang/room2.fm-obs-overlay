@@ -20,7 +20,7 @@ function draw() {
   // console.log(remapEnergy(mid, 0, 100));
 
   // below i've implemented bass/mid/hi to the three phase axes - hopefully makes sense
-  // let bass = remapEnergy(fft.getEnergy(50,140),230,225);
+  let bass = remapEnergy(fft.getEnergy(50,140),225,230);
   let mid = remapEnergy(fft.getEnergy(140,400),175,184);
   let treble = remapEnergy(fft.getEnergy(400,14000),33,43);
 
