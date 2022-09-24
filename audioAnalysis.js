@@ -4,12 +4,12 @@ function setup() {
   createCanvas(0, 0);
   stereoIn = new p5.AudioIn();
   stereoIn.start();
-  fft = new p5.FFT(0.985);
+  fft = new p5.FFT(0.989);
   fft.setInput(stereoIn);
 }
 
 function draw() {
-  let spectrum = fft.analyze(512);
+  let spectrum = fft.analyze(256);
   // example of one frequency analysis band
   // see the getEnergy documentation for more info on what you can
   // define the band as - but it returns a range of 0 - 255
@@ -20,9 +20,9 @@ function draw() {
   // console.log(remapEnergy(mid, 0, 100));
 
   // below i've implemented bass/mid/hi to the three phase axes - hopefully makes sense
-  let bass = remapEnergy(fft.getEnergy(50,140),225,230);
-  let mid = remapEnergy(fft.getEnergy(140,400),175,184);
-  let treble = remapEnergy(fft.getEnergy(400,14000),33,43);
+  let bass = 0;
+  let mid = remapEnergy(fft.getEnergy(50,220),150,175);
+  let treble = remapEnergy(fft.getEnergy(220,14000),14,26);
 
   // document.documentElement.style.setProperty("--font-var-one", bass);
   document.documentElement.style.setProperty("--font-var-two", mid);
@@ -64,4 +64,4 @@ function liveUpdate(){
   setTimeout(liveUpdate, 5000)
 }
 
-liveUpdate();
+// liveUpdate();

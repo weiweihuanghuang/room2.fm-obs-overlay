@@ -58,7 +58,7 @@ body{
   grid-column: 1/2;
   font-family: 'Bespoke';
   /*font-variation-settings: "thck" var(--font-var-one), "supr" var(--font-var-two), "flip" var(--font-var-three);*/
-  animation: breathe 60s ease-in-out 0s infinite both;
+  animation: breathe 8s ease-in-out 0s infinite both;
   padding: 3vw;
   font-size: 5vw;
 }
