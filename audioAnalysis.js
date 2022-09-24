@@ -8,6 +8,11 @@ function setup() {
   fft.setInput(stereoIn);
 }
 
+function touchStarted() {
+  getAudioContext().resume();
+}
+
+
 function draw() {
   let spectrum = fft.analyze(256);
   // example of one frequency analysis band
